@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Customer\Model\Metadata\Form">
+        <plugin name="Test_TrackingEmail::save_attribute"
+                type="Test\TrackingEmail\Plugin\Customer\Model\Metadata\Form\BeforeSaveAttribute" />
+    </type>
+
+    <type name="Magento\Customer\Model\Address">
+        <plugin name="Test_TrackingEmail::extract_attribute_from_extension_attribute"
+                type="Test\TrackingEmail\Plugin\Customer\Model\Address\ExtractAttributeFromExtension" />
+    </type>
+
+    <type name="Magento\Customer\Model\Address\AbstractAddress">
+        <plugin name="Test_TrackingEmail::add_attribute_to_data_model"
+                type="Test\TrackingEmail\Plugin\Customer\Model\Address\AbstractAddress\AddAttributeToModel" />
+    </type>
+</config>

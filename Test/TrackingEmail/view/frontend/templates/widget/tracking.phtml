@@ -1,0 +1,22 @@
+<?php
+/** @var \Test\TrackingEmail\Block\Widget\TrackingEmail $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+
+<div class="field tracking-email <?= $block->isRequired() ? 'required' : '' ?>">
+    <label for="tracking-email" class="label">
+        <span>
+            <?= $escaper->escapeHtml($block->getStoreLabel()) ?>
+        </span>
+    </label>
+    <div class="control">
+        <input type="email"
+               name="tracking_email"
+               id="tracking-email"
+               value="<?= $escaper->escapeHtmlAttr($block->getTrackingEmail()) ?>"
+               title="<?= $escaper->escapeHtmlAttr($block->getStoreLabel()) ?>"
+               class="input-text <?= $escaper->escapeHtmlAttr(
+                   $block->getAttributeValidationClass('tracking-email')
+               ) ?>">
+    </div>
+</div>
